@@ -27,5 +27,11 @@
     <ClCompile Include="CallBack.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="KeyBoardCallBack.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuCallBack.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -6,7 +6,7 @@ void MyDisplay();
 int main() {
 	glutInitWindowPosition(200, 100);
 	glutInitWindowSize(500, 500);
-	glutCreateWindow("À±ÀÇÁø");
+	glutCreateWindow("¹ÚÀç¹Î");
 	glutDisplayFunc(MyDisplay);
 	glutMainLoop();
 	return 0;
