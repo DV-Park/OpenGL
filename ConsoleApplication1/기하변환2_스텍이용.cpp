@@ -2,7 +2,6 @@
 #include<stdio.h>
 
 void MyDisplay();
-void MyReShape(int newWidth, int newHeight);
 
 int main(int argc, char** argv) {
 	glutInit(&argc, argv);
@@ -11,10 +10,7 @@ int main(int argc, char** argv) {
 	glutCreateWindow("¹ÚÀç¹Î");
 
 	glutDisplayFunc(MyDisplay);
-	glutReshapeFunc(MyReShape);
-
 	glutMainLoop();
-
 	return 0;
 }
 
@@ -51,12 +47,4 @@ void MyDisplay() {
 
 	glFlush();
 
-}
-
-void MyReShape(int newWidth, int newHeight) {
-	glViewport(0, 0, newWidth, newHeight);
-	GLfloat widthFactor = (GLfloat)newWidth / (GLfloat)300;
-	GLfloat heightFactor = (GLfloat)newHeight / (GLfloat)300;
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
 }
