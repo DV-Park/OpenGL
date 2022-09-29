@@ -21,7 +21,7 @@
     <ClCompile Include="5-4.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="5modeling.cpp">
+    <ClCompile Include="modeling.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="CallBack.cpp">
@@ -31,6 +31,15 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="MenuCallBack.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelTransform.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="기하변환2_스텍이용.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="기하변환.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

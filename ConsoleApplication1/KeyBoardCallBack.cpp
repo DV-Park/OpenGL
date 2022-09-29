@@ -14,7 +14,7 @@ int main(int argc, char** argv) {
 	glutInitDisplayMode(GLUT_RGBA);
 	glutInitWindowSize(600, 600);
 	glutInitWindowPosition(WX, WY);
-	glutCreateWindow("정보건");
+	glutCreateWindow("박재민");
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
