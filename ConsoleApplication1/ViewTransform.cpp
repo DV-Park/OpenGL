@@ -42,15 +42,15 @@ int main(int argc, char** argv) {
 
 void MyDisplay() {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glMatrixMode(GL_MODELVIEW);
+	glMatrixMode(GL_MODELVIEW); // 모델, 뷰 변환 (GL_PROJECTION : 투상 변환(행렬))
 	glLoadIdentity();
 	//gluLookAt(0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 1.0, 0.0); //원점, 초점, 기울임(상향벡터)
-	gluLookAt(-0.6, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 1.0, 0.0);
+	//gluLookAt(-0.6, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 1.0, 0.0);
 	//gluLookAt(0.6, 0.0, 0.0, 0.0, 0.0, -1.0, 0.0, 1.0, 0.0);
 	
 
 	//gluLookAt(0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0); // 초점 (물체의 좌측에서 우로 view)
-	//gluLookAt(0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0); // 초점 (물체의 아래에서 위로 view)
+	gluLookAt(0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0); // 초점 (물체의 아래에서 위로 view)
 
 	//gluLookAt(0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 1.0, 0.0, 0.0); // 카메라를 시계방향으로 90도 회전
 	//gluLookAt(0.0, 0.0, 0.0, 0.0, 0.0, -1.0, 1.0, 1.0, 0.0); // 카메라를 시계방향으로 45도 회전
