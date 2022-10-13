@@ -77,6 +77,7 @@ void MyReshape(int w, int h) {
 	WidthFactor = (GLfloat)Width / (GLfloat)500;
 	HeightFactor = (GLfloat)Height / (GLfloat)500;
 
+
 	glutPostRedisplay();
 }
 
