@@ -48,5 +48,11 @@
     <ClCompile Include="시점변환.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="뷰포트_분할_투상.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="CullFace-미완성.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
