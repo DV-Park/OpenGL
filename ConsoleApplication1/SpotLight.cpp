@@ -10,7 +10,7 @@ void MyLightInit()
 	glLightfv(GL_LIGHT0, GL_AMBIENT, light0_ambient); // Ia 설정
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, light0_diffuse); // Id 설정
 	glLightfv(GL_LIGHT0, GL_SPECULAR, light0_specular); // Is 설정
-	glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 1.0); // 거리 감쇠(상수) (1/a+bD+cD^2)
+	glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 1.0); // 거리 감쇠(상수)
 	glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.2); // 거리 감쇠(1차항)
 	glLightf(GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.0); // 거리 감쇠(2차항)
 
@@ -63,8 +63,13 @@ void DoDisplay()
 	//// 1번 광원 배치
 	if (Light1On) {
 		glEnable(GL_LIGHT1);
-		GLfloat light1_position[] = { 10.0, 0.0, 5.0, 1.0 }; // 광원의 위치
+		GLfloat light1_position[] = { 3.0,3.0,3.0,3.0 }; // 광원의 위치 (마지막 매개변수가 0 또는 1)
 		glLightfv(GL_LIGHT1, GL_POSITION, light1_position);
+
+		GLfloat spot_Direction[] = { -1.0,-1.0,-1.0 }; // 원점으로부터의 광원벡터 방향
+		glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, spot_Direction);
+		glLightf(GL_LIGHT1, GL_SPOT_CUTOFF, 40.0); // 조명각 0-90도(p. 545)
+		glLightf(GL_LIGHT1, GL_SPOT_EXPONENT, 12.0); // 조명승수 (광택계수와 유사)
 	}
 	else glDisable(GL_LIGHT1);
 
