@@ -75,5 +75,11 @@
     <ClCompile Include="lightGL(과제).cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="광원애니메이션.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ManyalTexture.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

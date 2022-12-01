@@ -18,17 +18,22 @@ void MyLightInit()
 	GLfloat MyGlobalAmbient[] = {0.2, 0.0, 0.0, 1.0};
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, MyGlobalAmbient);
 
-	glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_FALSE);	// default
-	glLightModeli(GL_LIGHT_MODEL_TWO_SIDE, GL_FALSE);		// default
+	glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_FALSE);	// default (½ÃÁ¡À§Ä¡)
+	glLightModeli(GL_LIGHT_MODEL_TWO_SIDE, GL_FALSE);		// default (¾ç¸éÁ¶¸í)
 
 	// 0¹ø ±¤¿ø
-	GLfloat light0_ambient[]={Ia, 0.0, 0.0, 1.0};
+	GLfloat light0_ambient[]={Ia, 0.0, 0.0, 1.0}; // 0ÀÌ¸é º¤ÅÍ 1ÀÌ¸é Á¡ (À§Ä¡¼º ±¤¿ø, ¹æÇâ¼º ±¤¿ø)
 	GLfloat light0_diffuse[]={Id, 0.0, 0.0, 1.0};
 	GLfloat light0_specular[]={Is, Is, Is, 1.0};
 	
 	glLightfv(GL_LIGHT0, GL_AMBIENT, light0_ambient);		// Ia: ÁÖº¯±¤
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, light0_diffuse);		// Id: È®»ê±¤
 	glLightfv(GL_LIGHT0, GL_SPECULAR, light0_specular);		// Is: °æ¸é±¤
+
+	glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 1.0);
+	glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.0);
+	glLightf(GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.0);
+
 
 	// 1¹ø ±¤¿ø
 	GLfloat light1_ambient[]={0.0, Ia, 0.0, 1.0};
@@ -46,11 +51,14 @@ void MyMaterialInit()
 	GLfloat material_diffuse[] = {Kd, Kd, Kd, 1.0};
 	GLfloat material_specular[] = {Ks, Ks, Ks, 1.0};
 	GLfloat material_shiniess[] = {Sn};
+	//GLfloat material_emission[] = { 0.0,0.1,0.1,1.0 };
 
 	glMaterialfv(GL_FRONT_AND_BACK, GL_AMBIENT, material_ambient);	// Ka: ÁÖº¯±¤ °è¼ö
 	glMaterialfv(GL_FRONT_AND_BACK, GL_DIFFUSE, material_diffuse);	// Kd: È®»ê±¤ °è¼ö
-	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, material_specular);// Ks: °æ¸é±¤ °è¼ö
-	glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, material_shiniess);// n: ±¤ÅÃ °è¼ö
+	glMaterialfv(GL_FRONT_AND_BACK, GL_SPECULAR, material_specular); // Ks: °æ¸é±¤ °è¼ö
+	glMaterialfv(GL_FRONT_AND_BACK, GL_SHININESS, material_shiniess); // n: ±¤ÅÃ °è¼ö
+	//glMaterialfv(GL_FRONT_AND_BACK, GL_EMISSION, material_emission); // ¹ß±¤»ö
+
 }
  
 void MyReshape(int w, int h) {
