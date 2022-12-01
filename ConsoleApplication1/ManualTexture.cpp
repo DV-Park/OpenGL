@@ -4,7 +4,7 @@
 
 GLubyte MyTexture[WIDTH][HEIGHT][3];
 
-void FillMyTextureCheck() {
+void FillMyTextureCheck() {		// 11-2 코드(체크무늬 텍스쳐)
 	int s, t;
 	for (s = 0;s < WIDTH; s++) {
 		for (t = 0;t < HEIGHT;t++) {
@@ -16,15 +16,16 @@ void FillMyTextureCheck() {
 	}
 }
 
-void MyTextureInit() {
+void MyTextureInit() {		//텍스쳐(코드 11-1, 11-2)
 	FillMyTextureCheck();
 
 	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, WIDTH, HEIGHT, 0, GL_RGB, GL_UNSIGNED_BYTE, &MyTexture[0][0][0]);
-
+	
+	//텍스쳐 파라미터 설정(p.606)
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST); //확장관계 필터 (NEAREST 가장 가까운, LINEAR 선형보간)
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST); //축소관계 필터 (NEAREST 가장 가까운, LINEAR 선형보간)
 	glEnable(GL_TEXTURE_2D);
 }
 

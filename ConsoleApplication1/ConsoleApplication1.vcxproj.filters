@@ -78,7 +78,10 @@
     <ClCompile Include="광원애니메이션.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="ManyalTexture.cpp">
+    <ClCompile Include="ManualTexture.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoTexture.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
